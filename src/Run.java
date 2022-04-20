@@ -1,12 +1,14 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Run {
 	static Scanner s = new Scanner(System.in);
 	static int row = 0;
 	static int column = 0;
 	static BoardState m = new BoardState();
+
 	public static void main(String[] args) {
 		run();
+		//chaseLights();
 	}
 	
 	private static int getRow() {
@@ -62,4 +64,29 @@ public class Run {
 		s.close();
 	}
 	
+	private static void chaseLights() {
+		m.displayBoard();
+		System.out.println("");
+		while (m.checkIfResolved() == false) {
+			for (int i = 0; i < m.getRow()-1; i++) {
+				for (int j = 0; j < m.getCollum(); j++) {
+					if (m.matrix[i][j] == 1) {
+						m.toggle(i+1, j);
+						m.displayBoard();
+						System.out.println("");
+					}
+				}
+			}
+			int[] key = new int[] {1,0,0,0,1};
+			int[] lock = new int[] {0,0,0,1,1};
+			for (int i = 0; i < key.length; i++) {
+				if (m.matrix[4][i] != key[i]) {
+					break;
+				}
+			
+			}
+			
+			
+		}
+	}
 }

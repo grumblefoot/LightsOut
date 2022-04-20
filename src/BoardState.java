@@ -2,8 +2,8 @@ import java.util.*;
 
 public class BoardState {
 	
-	private int row = 5;
-	private int collum = 5;
+	private int row = 4;
+	private int collum = 4;
 	int[][] matrix = new int[collum][row];
 	Random r = new Random();
 	
@@ -11,11 +11,20 @@ public class BoardState {
 		createBoard();
 	}
 	
-	public void createBoard() {
+	public void createRandomBoard() {
 		matrix = new int[row][collum];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
 				matrix[i][j] = r.nextInt(2);
+			}
+		}
+	}
+	public void createBoard() {
+		matrix = new int[row][collum];
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < collum; j++) {
+				matrix[i][j] = 1;
+				
 			}
 		}
 	}
@@ -100,6 +109,9 @@ public class BoardState {
 		}
 		return true;
 	}
-		
+	
+	public void setCell(int row, int collum) {
+		matrix[collum][row] = flip(matrix[collum][row]);
+	}
 
 }
