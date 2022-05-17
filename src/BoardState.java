@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ *@author Rowan W Osmon version 1.0 
+* This class holds the "board" a 2D array of zeros and ones
+*/
 public class BoardState {
 	
 	private int row = 4;
