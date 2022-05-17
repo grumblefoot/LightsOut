@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ *@author Rowan W Osmon version 1.0 
+* This class runs the game.
+*/
 public class Run {
 	static Scanner s = new Scanner(System.in);
 	static int row = 0;
